@@ -34,6 +34,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -69,6 +70,11 @@ public class chat extends AppCompatActivity {
     TextView txtv4;
     TextView txtv5;
     TextView txtv6;
+
+    TextView txtv15;
+    TextView txtv16;
+    TextView txtv25;
+    TextView txtv26;
 
     String [] words;
 
@@ -245,11 +251,16 @@ public class chat extends AppCompatActivity {
 //                }
 //            };
 
+    LinearLayout ll1;
+    LinearLayout ll2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+
+        ll1 = findViewById(R.id.ll1);
+        ll2 = findViewById(R.id.ll2);
 
         txtv1 = (TextView) findViewById(R.id.textView1);
         txtv2 = (TextView) findViewById(R.id.textView2);
@@ -257,6 +268,11 @@ public class chat extends AppCompatActivity {
         txtv4 = (TextView) findViewById(R.id.textView4);
         txtv5 = (TextView) findViewById(R.id.textView5);
         txtv6 = (TextView) findViewById(R.id.textView6);
+
+        txtv15 = (TextView) findViewById(R.id.textView15);
+        txtv16 = (TextView) findViewById(R.id.textView16);
+        txtv25 = (TextView) findViewById(R.id.textView25);
+        txtv26 = (TextView) findViewById(R.id.textView26);
 
 
 //        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
@@ -421,9 +437,6 @@ public class chat extends AppCompatActivity {
         startService(intent);
     }
 
-    /**
-     * Gets the address for the last known location.
-     */
 
     private void getAddress() {
         int permissionCheck = ContextCompat.checkSelfPermission(chat.this,
@@ -463,16 +476,12 @@ public class chat extends AppCompatActivity {
                 });
     }
 
-    /**
-     * Updates the address in the UI.
-     */
+
 //    private void displayAddressOutput() {
 //        mLocationAddressTextView.setText(mAddressOutput);
 //    }
 
-    /**
-     * Toggles the visibility of the progress bar. Enables or disables the Fetch Address button.
-     */
+
 
 //    private void updateUIWidgets() {
 //        if (mAddressRequested) {
@@ -667,6 +676,19 @@ public class chat extends AppCompatActivity {
                         t = "<b>" + "Phone:"+ "</b> " + words[5];
                         txtv6.setText(Html.fromHtml(t));
 
+                        t = "<b>" + "Distance:"+ "</b> " + words[8];
+                        txtv15.setText(Html.fromHtml(t));
+                        t = "<b>" + "Duration:"+ "</b> " + words[9];
+                        txtv16.setText(Html.fromHtml(t));
+                        t = "<b>" + "Distance:"+ "</b> " + words[10];
+                        txtv25.setText(Html.fromHtml(t));
+                        t = "<b>" + "Duration:"+ "</b> " + words[11];
+                        txtv26.setText(Html.fromHtml(t));
+
+                        ll1.setVisibility(View.VISIBLE);
+                        ll2.setVisibility(View.VISIBLE);
+
+
                     }
                 });
 
@@ -713,19 +735,25 @@ public class chat extends AppCompatActivity {
 
 
     public void dailerp(View view) {
-        Intent phoneIntent = new Intent(Intent.ACTION_CALL);
-        phoneIntent.setData(Uri.parse("tel:91-000-000-0000"));
-        int permissionCheck = ContextCompat.checkSelfPermission(chat.this,
-                Manifest.permission.CALL_PHONE);
-        startActivity(phoneIntent);
+
+        if(!words[5].equals("Not Available")) {
+            Intent phoneIntent = new Intent(Intent.ACTION_CALL);
+
+            phoneIntent.setData(Uri.parse("tel:" + words[5]));
+//        int permissionCheck = ContextCompat.checkSelfPermission(chat.this,
+//                Manifest.permission.CALL_PHONE);
+            startActivity(phoneIntent);
+        }
 
     }
 
     public void dailerh(View view) {
-        Intent phoneIntent = new Intent(Intent.ACTION_CALL);
-        int permissionCheck = ContextCompat.checkSelfPermission(chat.this,
-                Manifest.permission.CALL_PHONE);
-        phoneIntent.setData(Uri.parse("tel:91-000-000-0000"));
-        startActivity(phoneIntent);
+        if(!words[2].equals("Not Available")) {
+            Intent phoneIntent = new Intent(Intent.ACTION_CALL);
+//        int permissionCheck = ContextCompat.checkSelfPermission(chat.this,
+//                Manifest.permission.CALL_PHONE);
+            phoneIntent.setData(Uri.parse("tel:" + words[2]));
+            startActivity(phoneIntent);
+        }
     }
 }

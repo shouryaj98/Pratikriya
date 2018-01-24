@@ -37,6 +37,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    android:id="@+id/ll1"
                     android:gravity="center">
                     <TextView
                         android:id="@+id/textView1"
@@ -60,14 +63,35 @@
                         />
 
                     <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textIsSelectable="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/red"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textIsSelectable="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/red"
+                        />
+
+                    <TextView
                         android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textIsSelectable="true"
-                        android:onClick="dailerp"
+                        android:onClick="dailerh"
                         android:textStyle="bold"
                         android:textSize="20dp"
-                        android:clickable="true"
                         android:layout_below="@id/textView2"
                         android:layout_marginRight="20dp"
                         android:layout_marginLeft="20dp"
@@ -89,6 +113,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    android:id="@+id/ll2"
                     android:gravity="center">
                     <TextView
                         android:id="@+id/textView4"
@@ -110,12 +137,33 @@
                         />
 
                     <TextView
+                        android:id="@+id/textView25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textIsSelectable="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/red"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView26"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textIsSelectable="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/red"
+                        />
+
+                    <TextView
                         android:id="@+id/textView6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textIsSelectable="true"
-                        android:onClick="dailerh"
-                        android:clickable="true"
+                        android:onClick="dailerp"
                         android:textSize="20dp"
                         android:textStyle="bold"
                         android:layout_marginLeft="20dp"
@@ -130,6 +178,7 @@
                 android:layout_below="@id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_alignParentLeft="true"
+                android:padding="10dp"
                 android:layout_weight="1"
                 android:drawableTop="@drawable/add"
                 android:layout_height="wrap_content"
