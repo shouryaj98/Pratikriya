@@ -1,4 +1,6 @@
-Pratirkiya provides an integrated emergency services platform. 
+#                                                       Pratikriya
+
+### Pratirkiya provides an integrated emergency services platform. 
 
 User can immediately access their current location and find the nearest hospital& police station and their respective phone numbers in case of emergencies.
 The app also enables citizens report crimes , accidents and emergencies to the central database which can be accessed by govt. Officials.
@@ -17,12 +19,18 @@ In India, where there is currently a very unorganised and distributed emergency 
 
 Having an integrated app ensures that their concerns are addressed to the authorities.
 
-NOTE:
-Please note that we have used Azure VM services . The API that retreives the nearby places data is hosted on a Ubuntu server. We have $80 left and the VM uses $0.6 credits/hour . We request you to check the App before the credits get over otherwise our app won’t be able to display the content properly.
+### Please note that we have used Azure VM services . The API that retreives the nearby places data is hosted on a Ubuntu  server. We have $80 left and the VM uses $0.6 credits/hour . We request you to check the App before the credits get over  otherwise our app won’t be able to display the content properly.
 
 Please note that you will find two source codes one for Pratikriya and one for Pratikriya Receiver.Both of these are separate apps , one for sending the information regrading an accident ie Pratikriya and the other (Pratikriya Receiver) will be for receiving the notification regarding any accident along with the location ( as mentioned this app will be given to police and hospitals).
 3 links in total -
-https://github.com/dhruvrnaik/script_apicall
-https://github.com/shouryaj98/PratikriyaReceive
+* https://github.com/dhruvrnaik/script_apicall
+* https://github.com/shouryaj98/PratikriyaReceive
+* https://github.com/dhruvrnaik/Pratikriya
 
-Demo Video :https://youtu.be/IM1gyETXnrA
+Demo Video : https://youtu.be/IM1gyETXnrA
+
+
+Project by
+* Anisha Pal
+* Shourya Jaiswal
+* Dhruv Naik
