@@ -265,23 +265,6 @@ public class camera extends AppCompatActivity {
 
 
 
-//        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-//        //locationProvider = LocationManager.GPS_PROVIDER;
-//        locationListener = new LocationListener() {
-//            public void onLocationChanged(Location location) {
-//                // Called when a new location is found by the network location provider.
-//                makeUseOfNewLocation(location);
-//            }
-//
-//            public void onStatusChanged(String provider, int status, Bundle extras) {}
-//
-//            public void onProviderEnabled(String provider) {}
-//
-//            public void onProviderDisabled(String provider) {}
-//        };
-//        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
-
-
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
         // CAMERA PARTS
@@ -417,16 +400,9 @@ public class camera extends AppCompatActivity {
             Toast.makeText(camera.this, "Cannot access location..", Toast.LENGTH_SHORT).show();
         }
 
-        // If we have not yet retrieved the user location, we process the user's request by setting
-        // mAddressRequested to true. As far as the user is concerned, pressing the Fetch Address button
-        // immediately kicks off the process of getting the address.
 
     }
 
-    /**
-     * Creates an intent, adds location data to it as an extra, and starts the intent service for
-     * fetching an address.
-     */
     private void startIntentService() {
         // Create an intent for passing to the intent service responsible for fetching the address.
         Intent intent = new Intent(this, FetchAddressIntentService.class);
@@ -675,19 +651,6 @@ public class camera extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-//                        String t = "<b>" + "Hospital:"+ "</b> " + words[0];
-//                        txtv1.setText(Html.fromHtml(t));
-//                        t = "<b>" + "Address:"+ "</b> " + words[1];
-//                        txtv2.setText(Html.fromHtml(t));
-//                        t = "<b>" + "Phone:"+ "</b> " + words[2];
-//                        txtv3.setText(Html.fromHtml(t));
-//                        t = "<b>" + "Police Station:"+ "</b> " + words[3];
-//                        txtv4.setText(Html.fromHtml(t));
-//                        t = "<b>" + "Address:"+ "</b> " + words[4];
-//                        txtv5.setText(Html.fromHtml(t));
-//                        t = "<b>" + "Phone:"+ "</b> " + words[5];
-//                        txtv6.setText(Html.fromHtml(t));
-
                     }
                 });
 

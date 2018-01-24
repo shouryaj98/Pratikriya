@@ -7,8 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
@@ -115,141 +113,7 @@ public class chat extends AppCompatActivity {
     private TextView mLocationAddressTextView;
     private ProgressBar mProgressBar;
     private Button mFetchAddressButton;
-    /* Photo album for this application */
-//    private String getAlbumName() {
-//        return getString(R.string.album_name);
-//    }
-//
-//
-//    private File getAlbumDir() {
-//        File storageDir = null;
-//
-//        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
-//
-//            storageDir = mAlbumStorageDirFactory.getAlbumStorageDir(getAlbumName());
-//
-//            if (storageDir != null) {
-//                if (! storageDir.mkdirs()) {
-//                    if (! storageDir.exists()){
-//                        Log.d("CameraSample", "failed to create directory");
-//                        return null;
-//                    }
-//                }
-//            }
-//
-//        } else {
-//            Log.v(getString(R.string.app_name), "External storage is not mounted READ/WRITE.");
-//        }
-//
-//        return storageDir;
-//    }
-//
-//    private File createImageFile() throws IOException {
-//        // Create an image file name
-//        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-//        String imageFileName = JPEG_FILE_PREFIX + timeStamp + "_";
-//        File albumF = getAlbumDir();
-//        File imageF = File.createTempFile(imageFileName, JPEG_FILE_SUFFIX, albumF);
-//        return imageF;
-//    }
-//
-//    private File setUpPhotoFile() throws IOException {
-//
-//        File f = createImageFile();
-//        mCurrentPhotoPath = f.getAbsolutePath();
-//
-//        return f;
-//    }
-//
-//    private void setPic() {
-//
-//		/* There isn't enough memory to open up more than a couple camera photos */
-//		/* So pre-scale the target bitmap into which the file is decoded */
-//
-//		/* Get the size of the ImageView */
-//        int targetW = mImageView.getWidth();
-//        int targetH = mImageView.getHeight();
-//
-//		/* Get the size of the image */
-//        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-//        bmOptions.inJustDecodeBounds = true;
-//        BitmapFactory.decodeFile(mCurrentPhotoPath, bmOptions);
-//        int photoW = bmOptions.outWidth;
-//        int photoH = bmOptions.outHeight;
-//
-//		/* Figure out which way needs to be reduced less */
-//        int scaleFactor = 1;
-//        if ((targetW > 0) || (targetH > 0)) {
-//            scaleFactor = Math.min(photoW/targetW, photoH/targetH);
-//        }
-//
-//		/* Set bitmap options to scale the image decode target */
-//        bmOptions.inJustDecodeBounds = false;
-//        bmOptions.inSampleSize = scaleFactor;
-//        bmOptions.inPurgeable = true;
-//
-//		/* Decode the JPEG file into a Bitmap */
-//        Bitmap bitmap = BitmapFactory.decodeFile(mCurrentPhotoPath, bmOptions);
-//
-//		/* Associate the Bitmap to the ImageView */
-//        mImageView.setImageBitmap(bitmap);
-//        mImageView.setVisibility(View.VISIBLE);
-//    }
-//
-//    private void galleryAddPic() {
-//        Intent mediaScanIntent = new Intent("android.intent.action.MEDIA_SCANNER_SCAN_FILE");
-//        File f = new File(mCurrentPhotoPath);
-//        myFile = f;
-//        Uri contentUri = Uri.fromFile(f);
-//        mediaScanIntent.setData(contentUri);
-//        this.sendBroadcast(mediaScanIntent);
-//    }
-//
-//    private void dispatchTakePictureIntent(int actionCode) {
-//
-//        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//
-//        switch(actionCode) {
-//            case ACTION_TAKE_PHOTO_B:
-//                File f = null;
-//
-//                try {
-//                    f = setUpPhotoFile();
-//                    mCurrentPhotoPath = f.getAbsolutePath();
-//                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(f));
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                    f = null;
-//                    mCurrentPhotoPath = null;
-//                }
-//                break;
-//
-//            default:
-//                break;
-//        } // switch
-//
-//        startActivityForResult(takePictureIntent, actionCode);
-//    }
-//
-//
-//    private void handleBigCameraPhoto() {
-//
-//        if (mCurrentPhotoPath != null) {
-//            setPic();
-//            galleryAddPic();
-//            mCurrentPhotoPath = null;
-//        }
-//
-//    }
-//
-//
-//    ImageButton.OnClickListener mTakePicOnClickListener =
-//            new ImageButton.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    dispatchTakePictureIntent(ACTION_TAKE_PHOTO_B);
-//                }
-//            };
+
 
     LinearLayout ll1;
     LinearLayout ll2;
@@ -275,49 +139,23 @@ public class chat extends AppCompatActivity {
         txtv26 = (TextView) findViewById(R.id.textView26);
 
 
-//        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-//        //locationProvider = LocationManager.GPS_PROVIDER;
-//        locationListener = new LocationListener() {
-//            public void onLocationChanged(Location location) {
-//                // Called when a new location is found by the network location provider.
-//                makeUseOfNewLocation(location);
-//            }
-//
-//            public void onStatusChanged(String provider, int status, Bundle extras) {}
-//
-//            public void onProviderEnabled(String provider) {}
-//
-//            public void onProviderDisabled(String provider) {}
-//        };
-//        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
 
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-
-        // CAMERA PARTS
-        //mImageView = (ImageView) findViewById(R.id.imageView1);
-        //mImageBitmap = null;
-//        ImageButton imageButton;
-//        imageButton = (ImageButton) findViewById(R.id.btnIntend);
-//        setBtnListenerOrDisable(
-//                imageButton, mTakePicOnClickListener, MediaStore.ACTION_IMAGE_CAPTURE);
 
         mAlbumStorageDirFactory = new BaseAlbumDirFactory();
 
         mResultReceiver = new AddressResultReceiver(new Handler());
 
-//        mLocationAddressTextView = (TextView) findViewById(R.id.location_address_view);
-//        mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
         mFetchAddressButton = (Button) findViewById(R.id.fetch_address_button);
 
-        // Set defaults, then update using values stored in the Bundle.
+
         mAddressRequested = false;
         mAddressOutput = "";
-        //updateValuesFromBundle(savedInstanceState);
+
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
-        //updateUIWidgets();
     }
 
 
@@ -336,35 +174,7 @@ public class chat extends AppCompatActivity {
                         PackageManager.MATCH_DEFAULT_ONLY);
         return list.size() > 0;
     }
-//
-//    private void setBtnListenerOrDisable(
-//            ImageButton btn,
-//            ImageButton.OnClickListener onClickListener,
-//            String intentName
-//    ) {
-//        if (isIntentAvailable(this, intentName)) {
-//            btn.setOnClickListener(onClickListener);
-//        } else {
-//            // btn.setText(getText(R.string.cannot).toString() + " " + btn.getText());
-//            btn.setClickable(false);
-//        }
-//    }
 
-//
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        switch (requestCode) {
-//            case ACTION_TAKE_PHOTO_B: {
-//                if (resultCode == RESULT_OK) {
-//                    handleBigCameraPhoto();
-//                }
-//                break;
-//            } // ACTION_TAKE_PHOTO_B
-//        } // switch
-//    }
-
-
-    // CAMERA PART ENDS ABOVE
 
     @Override
     public void onStart() {
@@ -411,16 +221,9 @@ public class chat extends AppCompatActivity {
             Toast.makeText(chat.this, "Cannot access location..", Toast.LENGTH_SHORT).show();
         }
 
-        // If we have not yet retrieved the user location, we process the user's request by setting
-        // mAddressRequested to true. As far as the user is concerned, pressing the Fetch Address button
-        // immediately kicks off the process of getting the address.
-
     }
 
-    /**
-     * Creates an intent, adds location data to it as an extra, and starts the intent service for
-     * fetching an address.
-     */
+
     private void startIntentService() {
         // Create an intent for passing to the intent service responsible for fetching the address.
         Intent intent = new Intent(this, FetchAddressIntentService.class);
@@ -459,9 +262,6 @@ public class chat extends AppCompatActivity {
                             return;
                         }
 
-                        // If the user pressed the fetch address button before we had the location,
-                        // this will be set to true indicating that we should kick off the intent
-                        // service after fetching the location.
                         if (mAddressRequested) {
                             startIntentService();
                         }
@@ -476,22 +276,6 @@ public class chat extends AppCompatActivity {
                 });
     }
 
-
-//    private void displayAddressOutput() {
-//        mLocationAddressTextView.setText(mAddressOutput);
-//    }
-
-
-
-//    private void updateUIWidgets() {
-//        if (mAddressRequested) {
-//            mProgressBar.setVisibility(ProgressBar.VISIBLE);
-//            mFetchAddressButton.setEnabled(false);
-//        } else {
-//            mProgressBar.setVisibility(ProgressBar.GONE);
-//            mFetchAddressButton.setEnabled(true);
-//        }
-//    }
 
     private void showToast(String text) {
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
@@ -532,8 +316,6 @@ public class chat extends AppCompatActivity {
     }
 
 
-    ////////////////////Address ends//////////////////////////
-
     @SuppressWarnings("MissingPermission")
     private void getLastLocation() {
         mFusedLocationClient.getLastLocation()
@@ -545,9 +327,7 @@ public class chat extends AppCompatActivity {
 
                         } else {
                             Log.w(TAG, "getLastLocation:exception", task.getException());
-                            //showSnackbar(getString(R.string.no_location_detected));
-                            //Toast.makeText(getApplicationContext(), "Location n&ot detected.",
-                            //      Toast.LENGTH_SHORT).show();
+
                         }
                     }
                 });
@@ -556,7 +336,6 @@ public class chat extends AppCompatActivity {
     private void showSnackbar(final String text) {
         View container = findViewById(R.id.main_activity_container);
         if (container != null) {
-            //Snackbar.make(container, text, Snackbar.LENGTH_LONG).show();
             Toast.makeText(getApplicationContext(), "Location not detected.",
                     Toast.LENGTH_SHORT).show();
         }
@@ -649,7 +428,10 @@ public class chat extends AppCompatActivity {
 
             try {
                 while(mLastLocation == null);
+                //URL url = new URL("http://52.168.24.171:5000/?lat="+mLastLocation.getLatitude()+"&lon="+mLastLocation.getLongitude());
+
                 URL url = new URL("http://dhruvrnaik.pythonanywhere.com/?lat="+mLastLocation.getLatitude()+"&lon="+mLastLocation.getLongitude());
+
                 HttpURLConnection con = (HttpURLConnection) url.openConnection();
                 con.setRequestMethod("GET");
                 con.connect();
@@ -740,8 +522,6 @@ public class chat extends AppCompatActivity {
             Intent phoneIntent = new Intent(Intent.ACTION_CALL);
 
             phoneIntent.setData(Uri.parse("tel:" + words[5]));
-//        int permissionCheck = ContextCompat.checkSelfPermission(chat.this,
-//                Manifest.permission.CALL_PHONE);
             startActivity(phoneIntent);
         }
 
@@ -750,8 +530,6 @@ public class chat extends AppCompatActivity {
     public void dailerh(View view) {
         if(!words[2].equals("Not Available")) {
             Intent phoneIntent = new Intent(Intent.ACTION_CALL);
-//        int permissionCheck = ContextCompat.checkSelfPermission(chat.this,
-//                Manifest.permission.CALL_PHONE);
             phoneIntent.setData(Uri.parse("tel:" + words[2]));
             startActivity(phoneIntent);
         }
