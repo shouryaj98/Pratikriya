@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.anipal.new_ui.camera"
+    android:id="@+id/main_activity_container">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarid"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_collapseMode="pin"
+        android:layout_height="match_parent"
+        android:layout_width="?attr/actionBarSize" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/blob">
+            <ImageButton
+                android:id="@+id/btnIntend"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:src="@drawable/camera2"
+                android:layout_weight="1"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="40dp"
+                android:layout_alignParentLeft="true" />
+
+            <ImageView
+                android:layout_margin="20dp"
+                android:id="@+id/imageView1"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:visibility="visible"
+                android:layout_below="@+id/btnIntend"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@id/btnIntend" />
+            <Button
+                android:id="@+id/fetch_address_button"
+                android:layout_below="@id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/add"
+                android:layout_height="wrap_content"
+                android:text="Get Location"
+                android:background="#000000"
+                android:textColor="@color/red"
+                android:layout_alignParentRight="true"
+                android:onClick="fetchAddressButtonHandler"/>
+            <TextView
+                android:id="@+id/location_address_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:inputType="textMultiLine"
+                android:padding="20dp"
+                android:text="Click Get Location to receive your location here"
+                android:textIsSelectable="false"
+                android:layout_below="@id/fetch_address_button"
+                android:textColor="@color/red"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"/>
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="108dp"
+                android:padding="2dp"
+                android:visibility="gone" />
+            <ImageButton
+                android:id="@+id/send"
+                android:layout_marginLeft="100dp"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:src="@drawable/mail"
+                android:onClick="send"
+                android:layout_below="@id/location_address_view"
+                />
+            <ImageButton
+                android:id="@+id/twitter"
+                android:layout_marginLeft="200dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/twitter"
+                android:onClick="tweet"
+                android:layout_below="@id/location_address_view"
+                />
+        </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
