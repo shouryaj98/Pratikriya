@@ -19,7 +19,6 @@ In India, where there is currently a very unorganised and distributed emergency 
 
 Having an integrated app ensures that their concerns are addressed to the authorities.
 
-### Please note that we have used Azure VM services . The API that retreives the nearby places data is hosted on a Ubuntu  server. We have $80 left and the VM uses $0.6 credits/hour . We request you to check the App before the credits get over  otherwise our app won’t be able to display the content properly.
 
 Please note that you will find two source codes one for Pratikriya and one for Pratikriya Receiver.Both of these are separate apps , one for sending the information regrading an accident ie Pratikriya and the other (Pratikriya Receiver) will be for receiving the notification regarding any accident along with the location ( as mentioned this app will be given to police and hospitals).
 3 links in total -
