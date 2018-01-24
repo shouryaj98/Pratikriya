@@ -26,8 +26,7 @@ Please note that you will find two source codes one for Pratikriya and one for P
 * https://github.com/shouryaj98/PratikriyaReceive
 * https://github.com/dhruvrnaik/Pratikriya
 
-Demo Video : https://youtu.be/IM1gyETXnrA
-
+## [Demo Video](https://youtu.be/IM1gyETXnrA )
 
 Project by
 * Anisha Pal
@@ -36,3 +35,10 @@ Project by
 
 
 ## UI
+![enter](enter.jpeg)
+![menu](menu.jpeg)
+
+
+![loc](location.jpeg)
+![help](help.jpeg)
+![about](about.jpeg)
