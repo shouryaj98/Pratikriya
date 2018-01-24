@@ -37,7 +37,7 @@ Project by
 ## UI
 ![enter](enter.jpeg)
 ![menu](menu.jpeg)
-
+![info}(info.jpeg)
 
 ![loc](location.jpeg)
 ![help](help.jpeg)
