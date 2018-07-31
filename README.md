@@ -1,6 +1,6 @@
 #                                                       Pratikriya
 
-### Pratirkiya provides an integrated emergency services platform. 
+### Pratikriya provides an integrated emergency services platform. 
 
 User can immediately access their current location and find the nearest hospital & police station and their respective phone numbers in case of emergencies.
 The app also enables citizens report crimes , accidents and emergencies to the central database which can be accessed by govt. Officials.
